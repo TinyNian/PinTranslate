@@ -11,3 +11,7 @@ When the user selects a shape tool, they must be able to choose a rectangle or e
 ## Shape stroke and fill styles are independent
 
 When a rectangle or ellipse is selected, its stroke must retain editable color, thickness, and opacity while its fill can be disabled or retain a separate color and opacity. Changing fill opacity must not change stroke opacity; coupling them prevents a translucent highlight from keeping a clear boundary.
+
+## Text annotations separate text and background styles
+
+When the user creates a text annotation, it must use the macOS system font and retain editable text color, text opacity, font size, and regular or bold weight. Its resizable text box must wrap automatically and may have no background or a background with independent color and opacity. Coupling text and background opacity prevents a translucent highlight from keeping readable text.
