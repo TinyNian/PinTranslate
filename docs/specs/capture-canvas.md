@@ -4,6 +4,10 @@
 
 When the user releases a completed rectangular selection for a Region capture, an action toolbar with confirm and cancel controls must appear next to the selection. Double-clicking inside the selection or activating the checkmark confirms it; activating the cross cancels it. If completion is only available through a detached window or an undiscoverable shortcut, the capture flow no longer behaves like a conventional screenshot tool.
 
+## Confirm copies and exits
+
+When the user confirms a Region capture by double-clicking or activating the checkmark, the app must render the visible Canvas to the clipboard and close the capture interface. Pin, Save, and Translate must remain separate toolbar actions; if confirmation also triggers one of them, the same gesture has an unpredictable result.
+
 ## Editing is non-destructive
 
 When a user adds, changes, hides, or deletes an annotation or translation, the original Capture must remain unchanged and each edit must remain independently addressable until export. If an edit is flattened early, undo, restyling, and translation refresh can destroy prior work.
