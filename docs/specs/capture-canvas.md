@@ -27,3 +27,7 @@ When a Scrolling capture starts, the selected screen region must remain fixed wh
 ## A scrolling session has one direction
 
 When the first valid frame extension establishes a Scrolling capture's direction, every later frame must extend that same direction until completion. The default instruction is to scroll downward; if reverse movement is detected, capture must pause, exclude those frames, and tell the user to continue in the established direction. Accepting reverse frames can duplicate or reorder content in the stitched Capture.
+
+## Scrolling capture completes from the toolbar
+
+When a Scrolling capture is recording, the selection must pass pointer and scroll input through to the source application while its action toolbar remains interactive. Only the toolbar checkmark completes the stitched Capture and only the toolbar cross cancels it; double-clicking inside the selected region must not complete the capture. Intercepting that double-click can block or accidentally activate content in the source application.
