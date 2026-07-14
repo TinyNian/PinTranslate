@@ -8,6 +8,7 @@ PinTranslate owns the local workflow from screen capture to non-destructive comp
 | --- | --- | --- |
 | Capture and composition | [Capture canvas](docs/specs/capture-canvas.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
 | Pinned presentation | [Pinned canvas](docs/specs/pinned-canvas.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
+| OCR and translation | [Translation](docs/specs/translation.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
 
 ## System Relationships
 
@@ -18,7 +19,7 @@ A scrolling capture produces one Capture before it enters the same Canvas flow a
 ## Global Invariants
 
 - Editing never mutates the original capture; annotations and translations are separate layers until export. Details: [capture canvas](docs/specs/capture-canvas.md).
-- Captured pixels stay on the Mac unless the user explicitly invokes translation. Details: [capture canvas](docs/specs/capture-canvas.md).
+- Captured pixels stay on the Mac, and only recognized text crosses the network when the user explicitly invokes translation. Details: [translation](docs/specs/translation.md).
 - A Pinned canvas separates window movement from annotation gestures. Details: [pinned canvas](docs/specs/pinned-canvas.md).
 
 ## Language
