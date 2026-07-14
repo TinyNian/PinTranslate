@@ -11,3 +11,7 @@ When OCR groups recognized text into a paragraph block, its Translation layer mu
 ## Colliding translation blocks reflow together
 
 When a downward-expanded translation block would intersect the next translation block, the intersecting blocks must be merged and laid out again as one ordered group. Rendering independent overlapping blocks makes either translation unreadable.
+
+## Translation masks adapt to the source background
+
+When a Translation layer covers source text on a low-variance background, it must sample nearby pixels and fill the text block with a matching opaque color before drawing the translation. When the background is textured or image-like, it must use a high-opacity lightly blurred mask instead. Attempting seamless reconstruction would either produce unreliable artifacts or require sending captured pixels across the network, while leaving the source text visible makes both languages unreadable.
