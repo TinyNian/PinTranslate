@@ -7,6 +7,7 @@ PinTranslate owns the local workflow from screen capture to non-destructive comp
 | Area | Current contract | Decisions |
 | --- | --- | --- |
 | Capture and composition | [Capture canvas](docs/specs/capture-canvas.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
+| Annotation tools | [Annotations](docs/specs/annotations.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
 | Pinned presentation | [Pinned canvas](docs/specs/pinned-canvas.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
 | OCR and translation | [Translation](docs/specs/translation.md) | [Native macOS architecture](docs/adr/0001-native-macos.md) |
 
@@ -30,7 +31,7 @@ A scrolling capture produces one Capture before it enters the same Canvas flow a
 
 **Canvas**: A Capture plus ordered editable layers and viewport state. _Avoid_: Image
 
-**Annotation layer**: User-created lines, rectangles, arrows, or text with independent style properties. _Avoid_: Markup baked into the screenshot
+**Annotation layer**: A user-created straight line, freehand path, shape, arrow, or text object with independent style properties. _Avoid_: Markup baked into the screenshot
 
 **Translation layer**: OCR regions paired with translated text and layout metadata. _Avoid_: Translated screenshot
 
