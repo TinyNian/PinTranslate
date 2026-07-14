@@ -15,3 +15,7 @@ When a downward-expanded translation block would intersect the next translation 
 ## Translation masks adapt to the source background
 
 When a Translation layer covers source text on a low-variance background, it must sample nearby pixels and fill the text block with a matching opaque color before drawing the translation. When the background is textured or image-like, it must use a high-opacity lightly blurred mask instead. Attempting seamless reconstruction would either produce unreliable artifacts or require sending captured pixels across the network, while leaving the source text visible makes both languages unreadable.
+
+## The first provider boundary is OpenAI-compatible
+
+When the user configures translation, the first release must accept an OpenAI-compatible Chat Completions Base URL, model name, optional API key, and target language. The API key must be stored in macOS Keychain and must never appear in preferences files or logs. Adding native protocols for individual model providers before a real compatibility requirement exists would create speculative adapters and a wider secret-handling surface.
