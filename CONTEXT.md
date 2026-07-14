@@ -31,4 +31,8 @@ A scrolling capture produces one Capture before it enters the same Canvas flow a
 
 **Pinned canvas**: A Canvas presented in a movable always-on-top window. _Avoid_: Floating screenshot
 
-**Scrolling capture**: A Capture assembled from overlapping frames of one fixed screen region while its content scrolls. _Avoid_: Full-page capture
+**Scrolling capture**: A Capture assembled from overlapping frames of one fixed screen region while the user manually scrolls its content vertically. _Avoid_: Full-page capture, automatic scrolling capture
+
+## Flagged ambiguities
+
+- Whether one Scrolling capture may reverse direction or must keep one vertical direction until completion.

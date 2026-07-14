@@ -15,3 +15,7 @@ When a Canvas is copied or saved, export must render the Capture and every visib
 ## Scrolling capture precedes editing
 
 When a scrolling capture session is active, frames must be stitched into one immutable Capture before the Canvas is created. If annotations are allowed before stitching completes, their coordinates become invalid as the image height changes.
+
+## Scrolling capture is user-driven and vertical
+
+When a Scrolling capture starts, the selected screen region must remain fixed while the user manually scrolls its content vertically and the app captures overlapping frames. The app must not synthesize scroll events or incorporate horizontal movement; doing either makes behavior application-specific and can misalign the stitched Capture.
