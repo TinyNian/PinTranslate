@@ -7,3 +7,7 @@ When the user selects the straight-line tool, dragging must create one segment b
 ## Shape annotations include rectangles and ellipses
 
 When the user selects a shape tool, they must be able to choose a rectangle or ellipse and drag its bounds on the Canvas. Both shapes must use the same editable stroke and fill style model; implementing separate behavior for each would create inconsistent controls without adding capability.
+
+## Shape stroke and fill styles are independent
+
+When a rectangle or ellipse is selected, its stroke must retain editable color, thickness, and opacity while its fill can be disabled or retain a separate color and opacity. Changing fill opacity must not change stroke opacity; coupling them prevents a translucent highlight from keeping a clear boundary.
