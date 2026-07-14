@@ -19,3 +19,7 @@ When a scrolling capture session is active, frames must be stitched into one imm
 ## Scrolling capture is user-driven and vertical
 
 When a Scrolling capture starts, the selected screen region must remain fixed while the user manually scrolls its content vertically and the app captures overlapping frames. The app must not synthesize scroll events or incorporate horizontal movement; doing either makes behavior application-specific and can misalign the stitched Capture.
+
+## A scrolling session has one direction
+
+When the first valid frame extension establishes a Scrolling capture's direction, every later frame must extend that same direction until completion. The default instruction is to scroll downward; if reverse movement is detected, capture must pause, exclude those frames, and tell the user to continue in the established direction. Accepting reverse frames can duplicate or reorder content in the stitched Capture.
