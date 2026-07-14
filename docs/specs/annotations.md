@@ -15,3 +15,11 @@ When a rectangle or ellipse is selected, its stroke must retain editable color, 
 ## Text annotations separate text and background styles
 
 When the user creates a text annotation, it must use the macOS system font and retain editable text color, text opacity, font size, and regular or bold weight. Its resizable text box must wrap automatically and may have no background or a background with independent color and opacity. Coupling text and background opacity prevents a translucent highlight from keeping readable text.
+
+## Annotation objects remain editable
+
+When an annotation has been created, selecting it must allow moving, restyling, and deleting it. Straight lines and arrows must expose endpoint handles; rectangles, ellipses, and text boxes must expose resize handles; freehand paths may move as whole objects but must not expose individual path-point editing in the first release. Flattening or locking objects before export would break the non-destructive Canvas contract.
+
+## Annotation edits support standard history controls
+
+When an annotation edit changes the Canvas, Command-Z must undo it, Shift-Command-Z must redo it, and Delete must remove the selected annotation as an undoable edit. If only creation can be undone, later geometry and style mistakes cannot be safely recovered.
